@@ -5,7 +5,7 @@ import { featuredProjects } from '../data/projects'
 import ProjectCard from '../components/ProjectCard'
 
 export default function Home() {
-  const thinkingModes = ['Systems', 'Strategic', 'Adaptive', 'Business', 'Human'];
+  const thinkingModes = ['Creative','Systems','Business','Product','Human'];
   const [mode, setMode] = useState(0);
 
   useEffect(() => {
@@ -20,7 +20,9 @@ export default function Home() {
       <div className="hero-meta"><span>01 / PORTFOLIO</span><span>{site.location}</span></div>
       <div className="hero-main">
         <p className="eyebrow accent">Information Systems · Business · Technology</p>
-        <h1>Where Creative Thinking<br /><em key={thinkingModes[mode]} className="hero-rotating">Meets {thinkingModes[mode]} Thinking.</em></h1>
+        <h1>Where Strategic Thinking<br />
+        <em key={thinkingModes[mode]} className="hero-rotating"> Meets {thinkingModes[mode]} Thinking.</em>
+        </h1>
         <div className="hero-bottom">
           <p className="hero-statement">I turn complex problems into creative solutions.</p>
           <Link className="text-link" to="/work">Explore work <span>↗</span></Link>
