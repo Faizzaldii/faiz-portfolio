@@ -148,7 +148,7 @@ export default function Home() {
             <div className="recognition-content">
               <span className="recognition-year">2025</span>
               <h3>Top 30</h3>
-              <p>BINUSian Career Influencer &amp; Ambassador</p>
+              <p>BINUS Career Influencer &amp; Ambassador</p>
             </div>
           </article>
 
