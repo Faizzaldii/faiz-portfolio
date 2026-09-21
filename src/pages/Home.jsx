@@ -5,7 +5,7 @@ import { featuredProjects } from '../data/projects'
 import ProjectCard from '../components/ProjectCard'
 
 export default function Home() {
-  const thinkingModes = ['Creative','Systems','Business','Product','Human'];
+  const thinkingModes = ['Creative', 'Systems', 'Business', 'Product', 'Human'];
   const [mode, setMode] = useState(0);
 
   useEffect(() => {
@@ -20,14 +20,25 @@ export default function Home() {
       <div className="hero-meta"><span>01 / PORTFOLIO</span><span>{site.location}</span></div>
       <div className="hero-main">
         <p className="eyebrow accent">Information Systems · Business · Technology</p>
+        <div className="hero-identity"> <strong>Faiz Zaldi</strong>
+          <span>Information Systems Student · BINUS University</span>
+        </div>
         <h1>Where Strategic Thinking<br />
-        <em key={thinkingModes[mode]} className="hero-rotating"> Meets {thinkingModes[mode]} Thinking.</em>
+          <em key={thinkingModes[mode]} className="hero-rotating"> Meets {thinkingModes[mode]} Thinking.</em>
         </h1>
         <div className="hero-bottom">
           <p className="hero-statement">I turn complex problems into creative solutions.</p>
           <Link className="text-link" to="/work">Explore work <span>↗</span></Link>
         </div>
       </div>
+      <div className="hero-portrait">
+        <div className="hero-portrait-glow"></div>
+        <img
+          src={`${import.meta.env.BASE_URL}profile/Faiz-Formal-Glow.png`}
+          alt="Faiz Zaldi"
+        />
+      </div>
+
       <div className="hero-mark">FZ</div>
     </section>
 
@@ -46,7 +57,7 @@ export default function Home() {
         <div><p className="eyebrow">03 / HOW I THINK</p><h2>Ideas need<br /><em>structure.</em></h2></div>
         <div className="thinking-copy">
           <p className="large-copy">I enjoy working where creativity meets complexity — turning possibilities into decisions, and decisions into things that work.</p>
-          <div className="process">{['Understand','Structure','Explore','Decide','Build','Improve'].map((step, index) => <div className="process-step" key={step}><span>0{index + 1}</span><strong>{step}</strong></div>)}</div>
+          <div className="process">{['Understand', 'Structure', 'Explore', 'Decide', 'Build', 'Improve'].map((step, index) => <div className="process-step" key={step}><span>0{index + 1}</span><strong>{step}</strong></div>)}</div>
         </div>
       </div>
     </section>
