@@ -1020,7 +1020,7 @@ h2 em {
 ========================= */
 
 .recognition-section {
-  width: 100vw;
+  width: 100%;
   margin-left: calc(50% - 50vw);
   padding: 140px 0 160px;
   background: #08090d;
