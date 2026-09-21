@@ -24,7 +24,9 @@ export default function Home() {
           <span>Information Systems Student · BINUS University</span>
         </div>
         <h1>Where Strategic Thinking<br />
-          <em key={thinkingModes[mode]} className="hero-rotating"> Meets {thinkingModes[mode]} Thinking.</em>
+          <em key={thinkingModes[mode]} className="hero-rotating">
+            Meets {thinkingModes[mode]}<br className="mobile-break" /> Thinking.
+          </em>
         </h1>
         <div className="hero-bottom">
           <p className="hero-statement">I turn complex problems into creative solutions.</p>

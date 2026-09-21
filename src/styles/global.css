@@ -908,3 +908,13 @@ h2 em {
     }
 
 }
+
+.mobile-break {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .mobile-break {
+    display: block;
+  }
+}
