@@ -831,13 +831,13 @@ h2 em {
 @media (max-width: 800px) {
 
     .hero {
-        min-height: 820px;
-        padding: 70px 0 60px;
+        min-height: auto;
+        padding: 45px 0 70px;
+        justify-content: flex-start;
     }
 
     .hero-main {
-        margin-top: 4vh;
-        z-index: 3;
+        margin-top: 70px;
     }
 
     .hero-identity {
@@ -910,11 +910,11 @@ h2 em {
 }
 
 .mobile-break {
-  display: none;
+    display: none;
 }
 
 @media (max-width: 800px) {
-  .mobile-break {
-    display: block;
-  }
+    .mobile-break {
+        display: block;
+    }
 }
