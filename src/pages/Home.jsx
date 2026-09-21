@@ -12,7 +12,29 @@ export default function Home() {
     const timer = window.setInterval(() => {
       setMode((current) => (current + 1) % thinkingModes.length);
     }, 3200);
+
     return () => window.clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const elements = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
   }, []);
 
   return <main id="top">
@@ -30,7 +52,19 @@ export default function Home() {
         </h1>
         <div className="hero-bottom">
           <p className="hero-statement">I turn complex problems into creative solutions.</p>
-          <Link className="text-link" to="/work">Explore work <span>↗</span></Link>
+          <div className="hero-actions">
+            <Link className="text-link" to="/work">
+              Explore Work <span>↗</span>
+            </Link>
+
+            <a
+              className="text-link"
+              href={`${import.meta.env.BASE_URL}cv/CV-MuhammadFaizZaldi.pdf`}
+              download
+            >
+              Download CV <span>↓</span>
+            </a>
+          </div>
         </div>
       </div>
       <div className="hero-portrait">
@@ -44,7 +78,7 @@ export default function Home() {
       <div className="hero-mark">FZ</div>
     </section>
 
-    <section className="section container" id="work">
+    <section className="section container reveal" id="work">
       <div className="section-head">
         <div><p className="eyebrow">02 / SELECTED WORK</p><h2>Things I’ve built,<br /><em>shaped, and solved.</em></h2></div>
         <div className="section-head-right"><p className="section-note">A curated selection across project management, business, product, UX, and technology.</p><Link className="text-link" to="/work">See all work <span>↗</span></Link></div>
@@ -54,7 +88,7 @@ export default function Home() {
       </div>
     </section>
 
-    <section id="thinking" className="thinking-section">
+    <section className="section container reveal" id="thinking">
       <div className="container thinking-grid">
         <div><p className="eyebrow">03 / HOW I THINK</p><h2>Ideas need<br /><em>structure.</em></h2></div>
         <div className="thinking-copy">
@@ -64,12 +98,12 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="section container about-section">
+    <section className="section container about-section reveal" id="about">
       <div><p className="eyebrow">04 / ABOUT</p><h2>Information Systems<br /><em>with a creative edge.</em></h2></div>
       <div className="about-copy"><p>I’m Faiz, an Information Systems student at BINUS University interested in the space between business, technology, product, and people.</p><p>My work tends to move between analysis and making: understanding a problem, exploring possibilities, structuring a direction, and getting it into execution.</p><Link className="text-link" to="/about">More about me <span>↗</span></Link></div>
     </section>
 
-    <section id="contact" className="contact-section">
+    <section className="section container contact-section reveal" id="contact">
       <div className="container contact-inner"><p className="eyebrow">05 / CONTACT</p><h2>Have a problem<br /><em>worth exploring?</em></h2><a className="contact-email" href={`mailto:${site.email}`}>{site.email}</a><div className="contact-links"><a href={site.linkedin}>LinkedIn ↗</a><a href={site.github}>GitHub ↗</a></div></div>
     </section>
     <footer className="footer container"><span>© {new Date().getFullYear()} Faiz Zaldi</span><span>Built with curiosity & systems thinking.</span></footer>

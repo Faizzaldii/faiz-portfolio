@@ -918,3 +918,99 @@ h2 em {
         display: block;
     }
 }
+
+/* Scroll Reveal */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+    filter: blur(4px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease,
+        filter 0.9s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+/* Scroll Reveal */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(4px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.9s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+/* Thinking Section - Light Editorial */
+#thinking {
+    background: #f4f2ed;
+    color: #111111;
+    padding-top: 110px;
+    padding-bottom: 130px;
+    min-height: 100vh;
+    width: 100%;
+    margin-left: calc(50% - 50vw);
+
+    position: relative;
+    isolation: isolate;
+}
+
+#thinking h2,
+#thinking p,
+#thinking strong,
+#thinking span,
+#thinking li {
+    color: #111111;
+}
+
+#thinking::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom,
+            transparent,
+            #f4f2ed);
+    pointer-events: none;
+}
+
+/* Scroll Reveal */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.hero-actions a:last-child {
+  transform: translateY(1px);
+}
