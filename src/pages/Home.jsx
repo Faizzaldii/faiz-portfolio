@@ -98,6 +98,66 @@ export default function Home() {
       </div>
     </section>
 
+    <section className="recognition-section reveal" id="recognition">
+      <div className="recognition-inner">
+
+        <div className="recognition-heading">
+          <span className="eyebrow">Recognition</span>
+
+          <h2>
+            <span>Milestones</span>
+            <em>along the way.</em>
+          </h2>
+
+          <p>
+            A few moments that mark the journey so far.
+          </p>
+        </div>
+
+        <div className="recognition-list">
+
+          <article className="recognition-item">
+            <span className="recognition-bg-number">01</span>
+
+            <div className="recognition-number">01</div>
+
+            <div className="recognition-content">
+              <span className="recognition-year">2026</span>
+              <h3>Semi Finalist</h3>
+              <p>UI/UX Competition — The ACE UNDIP</p>
+            </div>
+          </article>
+
+          <article className="recognition-item">
+            <span className="recognition-bg-number">02</span>
+
+            <div className="recognition-number">02</div>
+
+            <div className="recognition-content">
+              <span className="recognition-year">2026</span>
+              <h3>Semi Finalist</h3>
+              <p>Business Case Competition — Makarapreneur UI</p>
+            </div>
+          </article>
+
+          <article className="recognition-item">
+            <span className="recognition-bg-number">03</span>
+
+            <div className="recognition-number">03</div>
+
+            <div className="recognition-content">
+              <span className="recognition-year">2025</span>
+              <h3>Top 30</h3>
+              <p>BINUSian Career Influencer &amp; Ambassador</p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
     <section className="section container about-section reveal" id="about">
       <div><p className="eyebrow">04 / ABOUT</p><h2>Information Systems<br /><em>with a creative edge.</em></h2></div>
       <div className="about-copy"><p>I’m Faiz, an Information Systems student at BINUS University interested in the space between business, technology, product, and people.</p><p>My work tends to move between analysis and making: understanding a problem, exploring possibilities, structuring a direction, and getting it into execution.</p><Link className="text-link" to="/about">More about me <span>↗</span></Link></div>
