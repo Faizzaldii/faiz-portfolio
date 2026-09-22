@@ -5,11 +5,11 @@ export const projects = [
     date: '2026-09-22',
 
     title: 'Jakarta Capuche',
-    type: 'Brand & Digital Commerce',
-    role: 'Brand / Business System',
+    type: 'Business Systems & Digital Commerce',
+    role: 'Team Lead — Business Systems & Digital Commerce',
 
     short:
-      'A modern lifestyle apparel brand combining urban identity, digital commerce, and an integrated Odoo ecosystem.',
+      'A lifestyle apparel business developed through digital commerce and an integrated Odoo business system.',
 
     tags: ['Branding', 'E-Commerce', 'Odoo'],
 
@@ -21,7 +21,7 @@ export const projects = [
     fallback: 'jakarta-capuche',
 
     intro:
-      'Jakarta Capuche is a modern lifestyle apparel brand inspired by the dynamic culture, creativity, and movement of urban life in Jakarta.',
+      'Jakarta Capuche is a modern lifestyle apparel brand developed as an integrated digital business, combining urban brand identity, digital commerce, and business operations through Odoo.',
 
     externalUrl:
       'https://edu-capuchejakarta.odoo.com/',
@@ -31,21 +31,24 @@ export const projects = [
 
     sections: [
       {
-        title: 'The Brand',
+        title: 'Business Foundation',
         description:
-          'A contemporary lifestyle apparel concept designed around Jakarta’s urban culture, individuality, and everyday movement.'
+          'Defined the business concept, product structure, customer journey, and operational requirements as the foundation for building Jakarta Capuche’s digital business ecosystem.'
       },
-
       {
-        title: 'The Digital Experience',
+        title: 'Digital Commerce',
         description:
-          'A digital commerce experience that connects the brand, products, and customer journey.'
+          'Structured the digital commerce flow across products, pricing, customer interactions, and sales activities within a centralized digital environment.'
       },
-
       {
-        title: 'The System',
+        title: 'Odoo Business System',
         description:
-          'An integrated Odoo environment connecting the storefront with the operational side of the business.'
+          'Translated business requirements into Odoo workflows, connecting commercial and operational activities within an integrated business management environment.'
+      },
+      {
+        title: 'Team Leadership',
+        description:
+          'Led the project team in coordinating requirements, system implementation, workflow decisions, and alignment between business objectives and technology.'
       }
     ]
   },

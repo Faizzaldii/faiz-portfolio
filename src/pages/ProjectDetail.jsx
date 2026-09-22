@@ -43,7 +43,22 @@ export default function ProjectDetail() {
           <p className="detail-intro">
             {project.intro}
           </p>
+          <div className="detail-meta">
+            <div className="detail-meta-item">
+              <span>ROLE</span>
+              <strong>{project.role}</strong>
+            </div>
 
+            <div className="detail-meta-item">
+              <span>YEAR</span>
+              <strong>{project.year}</strong>
+            </div>
+
+            <div className="detail-meta-item">
+              <span>TOOLS</span>
+              <strong>Odoo</strong>
+            </div>
+          </div>
         </div>
 
         <div className="detail-actions">

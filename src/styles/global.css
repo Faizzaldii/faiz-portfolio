@@ -635,7 +635,7 @@ h2 em {
 }
 
 .detail-hero {
-  min-height: auto;
+    min-height: auto;
 }
 
 .back-link {
@@ -652,7 +652,13 @@ h2 em {
 }
 
 .detail-heading h1 {
-    margin-bottom: 30px
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .detail-heading h1 {
+    white-space: normal;
+  }
 }
 
 .detail-heading>p:last-child {
@@ -1483,4 +1489,67 @@ h2 em {
 
 .detail-heading p {
     margin-top: 22px;
+}
+
+/* =========================
+   PROJECT DETAIL
+   ========================= */
+
+.project-detail .detail-content {
+    padding-top: 40px;
+}
+
+.project-detail .detail-section {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 54px;
+    padding: 70px 0;
+    border-top: 1px solid var(--line);
+}
+
+.project-detail .detail-section:first-child {
+    border-top: 1px solid var(--line);
+}
+
+.project-detail .detail-section-number {
+    padding-top: 8px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+
+.project-detail .detail-section h2 {
+    margin: 0 0 20px;
+}
+
+.project-detail .detail-section p {
+    max-width: 680px;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.detail-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.detail-meta-item {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+}
+
+.detail-meta-item span {
+    min-width: 52px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+}
+
+.detail-meta-item strong {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
 }
