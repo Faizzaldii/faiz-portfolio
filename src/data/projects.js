@@ -1,5 +1,56 @@
 export const projects = [
   {
+    id: 'jakarta-capuche',
+    year: 2026,
+    date: '2026-09-22',
+
+    title: 'Jakarta Capuche',
+    type: 'Brand & Digital Commerce',
+    role: 'Brand / Business System',
+
+    short:
+      'A modern lifestyle apparel brand combining urban identity, digital commerce, and an integrated Odoo ecosystem.',
+
+    tags: ['Branding', 'E-Commerce', 'Odoo'],
+
+    featured: true,
+    size: 'large',
+
+    image: '/projects/jakarta-capuche/cover.png',
+    pdf: '/projects/jakarta-capuche/Jakarta-Capuche-Portfolio.pdf',
+    fallback: 'jakarta-capuche',
+
+    intro:
+      'Jakarta Capuche is a modern lifestyle apparel brand inspired by the dynamic culture, creativity, and movement of urban life in Jakarta.',
+
+    externalUrl:
+      'https://edu-capuchejakarta.odoo.com/',
+
+    pdfUrl:
+      '/projects/jakarta-capuche/Jakarta-Capuche-Portfolio.pdf',
+
+    sections: [
+      {
+        title: 'The Brand',
+        description:
+          'A contemporary lifestyle apparel concept designed around Jakarta’s urban culture, individuality, and everyday movement.'
+      },
+
+      {
+        title: 'The Digital Experience',
+        description:
+          'A digital commerce experience that connects the brand, products, and customer journey.'
+      },
+
+      {
+        title: 'The System',
+        description:
+          'An integrated Odoo environment connecting the storefront with the operational side of the business.'
+      }
+    ]
+  },
+
+  {
     id: 'nova', year: 2026, date: '2026-06-19', title: 'NOVA', type: 'Project Management', role: 'Project Manager',
     short: 'A leadership candidate program shaped through strategy, coordination, and regional execution.',
     tags: ['Leadership', 'Strategy', 'Operations'], featured: true, size: 'large',
@@ -41,6 +92,6 @@ export const projects = [
     sections: [['Exploration', 'Personalized recommendations, AI integration, traveler community, loyalty points, and marketplace partnerships.']]
   }
 ];
-export const featuredProjects = [...projects].filter(p=>p.featured).sort((a,b)=>b.date.localeCompare(a.date)).slice(0,4);
-export const allProjects = [...projects].sort((a,b)=>b.date.localeCompare(a.date));
-export const getProject = id => projects.find(p=>p.id===id);
+export const featuredProjects = [...projects].filter(p => p.featured).sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
+export const allProjects = [...projects].sort((a, b) => b.date.localeCompare(a.date));
+export const getProject = id => projects.find(p => p.id === id);

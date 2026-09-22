@@ -635,7 +635,7 @@ h2 em {
 }
 
 .detail-hero {
-    padding: 70px 0 120px
+  min-height: auto;
 }
 
 .back-link {
@@ -1006,13 +1006,13 @@ h2 em {
 }
 
 .hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 32px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
 }
 
 .hero-actions a:last-child {
-  transform: translateY(1px);
+    transform: translateY(1px);
 }
 
 /* =========================
@@ -1020,199 +1020,467 @@ h2 em {
 ========================= */
 
 .recognition-section {
-  width: 100%;
-  margin-left: calc(50% - 50vw);
-  padding: 140px 0 160px;
-  background: #08090d;
-  color: var(--text);
-  overflow: hidden;
+    width: 100%;
+    margin-left: calc(50% - 50vw);
+    padding: 140px 0 160px;
+    background: #08090d;
+    color: var(--text);
+    overflow: hidden;
 }
 
 .recognition-inner {
-  width: min(1180px, calc(100% - 80px));
-  margin: 0 auto;
+    width: min(1180px, calc(100% - 80px));
+    margin: 0 auto;
 }
 
 .recognition-heading {
-  max-width: 1100px;
-  margin-bottom: 90px;
+    max-width: 1100px;
+    margin-bottom: 90px;
 }
 
 .recognition-heading .eyebrow {
-  display: block;
-  margin-bottom: 18px;
-  font-family: var(--mono);
-  font-size: .68rem;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  color: var(--muted);
+    display: block;
+    margin-bottom: 18px;
+    font-family: var(--mono);
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    color: var(--muted);
 }
 
 .recognition-heading h2 {
-  margin: 0;
-  font-size: clamp(4rem, 8vw, 7.5rem);
-  line-height: .82;
-  letter-spacing: -.065em;
+    margin: 0;
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    line-height: .82;
+    letter-spacing: -.065em;
 }
 
 .recognition-heading h2 span {
-  display: block;
-  font-family: var(--sans);
-  font-weight: 600;
+    display: block;
+    font-family: var(--sans);
+    font-weight: 600;
 }
 
 .recognition-heading h2 em {
-  display: block;
-  margin-left: 18%;
-  font-family: var(--serif);
-  font-weight: 400;
-  font-style: italic;
+    display: block;
+    margin-left: 18%;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
 }
 
 .recognition-heading p {
-  margin: 32px 0 0;
-  max-width: 420px;
-  font-size: .95rem;
-  line-height: 1.6;
-  color: var(--muted);
+    margin: 32px 0 0;
+    max-width: 420px;
+    font-size: .95rem;
+    line-height: 1.6;
+    color: var(--muted);
 }
 
 .recognition-list {
-  border-top: 1px solid var(--line);
+    border-top: 1px solid var(--line);
 }
 
 .recognition-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: 90px 1fr 100px;
-  align-items: center;
-  min-height: 190px;
-  padding: 30px 0;
-  border-bottom: 1px solid var(--line);
-  overflow: hidden;
-  transition:
-    padding .45s ease,
-    background .45s ease;
+    position: relative;
+    display: grid;
+    grid-template-columns: 90px 1fr 100px;
+    align-items: center;
+    min-height: 190px;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+    transition:
+        padding .45s ease,
+        background .45s ease;
 }
 
 .recognition-number {
-  position: relative;
-  z-index: 2;
-  font-family: var(--mono);
-  font-size: .7rem;
-  color: var(--muted);
+    position: relative;
+    z-index: 2;
+    font-family: var(--mono);
+    font-size: .7rem;
+    color: var(--muted);
 }
 
 .recognition-content {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 .recognition-year {
-  display: block;
-  margin-bottom: 10px;
-  font-family: var(--mono);
-  font-size: .65rem;
-  letter-spacing: .08em;
-  color: var(--muted);
+    display: block;
+    margin-bottom: 10px;
+    font-family: var(--mono);
+    font-size: .65rem;
+    letter-spacing: .08em;
+    color: var(--muted);
 }
 
 .recognition-content h3 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  font-weight: 400;
-  line-height: .95;
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    font-weight: 400;
+    line-height: .95;
 }
 
 .recognition-content p {
-  margin: 14px 0 0;
-  font-size: .82rem;
-  color: var(--muted);
+    margin: 14px 0 0;
+    font-size: .82rem;
+    color: var(--muted);
 }
 
 .recognition-bg-number {
-  position: absolute;
-  right: 7%;
-  bottom: -28%;
-  z-index: 0;
-  font-family: var(--sans);
-  font-size: clamp(10rem, 18vw, 17rem);
-  font-weight: 700;
-  line-height: .7;
-  letter-spacing: -.08em;
-  color: rgba(255,255,255,.025);
-  pointer-events: none;
-  transition:
-    transform .6s ease,
-    color .6s ease;
+    position: absolute;
+    right: 7%;
+    bottom: -28%;
+    z-index: 0;
+    font-family: var(--sans);
+    font-size: clamp(10rem, 18vw, 17rem);
+    font-weight: 700;
+    line-height: .7;
+    letter-spacing: -.08em;
+    color: rgba(255, 255, 255, .025);
+    pointer-events: none;
+    transition:
+        transform .6s ease,
+        color .6s ease;
 }
 
 .recognition-item:hover {
-  padding-left: 14px;
-  padding-right: 14px;
-  background:
-    radial-gradient(
-      circle at 70% 50%,
-      rgba(139,92,246,.08),
-      transparent 45%
-    );
+    padding-left: 14px;
+    padding-right: 14px;
+    background:
+        radial-gradient(circle at 70% 50%,
+            rgba(139, 92, 246, .08),
+            transparent 45%);
 }
 
 .recognition-item:hover .recognition-bg-number {
-  transform: scale(1.08) translateX(-12px);
-  color: rgba(139,92,246,.07);
+    transform: scale(1.08) translateX(-12px);
+    color: rgba(139, 92, 246, .07);
 }
 
 .recognition-item:hover .recognition-content h3 {
-  color: #ffffff;
+    color: #ffffff;
 }
 
 @media (max-width: 800px) {
-  .recognition-section {
-  width: 100%;
-  margin-left: 0;
-  padding: 140px 0 160px;
-  }
+    .recognition-section {
+        width: 100%;
+        margin-left: 0;
+        padding: 140px 0 160px;
+    }
 
-  .recognition-inner {
-    width: min(100% - 40px, 600px);
-  }
+    .recognition-inner {
+        width: min(100% - 40px, 600px);
+    }
 
-  .recognition-heading {
-    margin-bottom: 60px;
-  }
+    .recognition-heading {
+        margin-bottom: 60px;
+    }
 
-  .recognition-heading h2 {
-    font-size: clamp(3.5rem, 16vw, 6rem);
-  }
+    .recognition-heading h2 {
+        font-size: clamp(3.5rem, 16vw, 6rem);
+    }
 
-  .recognition-heading h2 em {
-    margin-left: 8%;
-  }
+    .recognition-heading h2 em {
+        margin-left: 8%;
+    }
 
-  .recognition-item {
-    grid-template-columns: 50px 1fr;
-    min-height: 170px;
-    padding: 26px 0;
-  }
+    .recognition-item {
+        grid-template-columns: 50px 1fr;
+        min-height: 170px;
+        padding: 26px 0;
+    }
 
-  .recognition-year {
-    margin-bottom: 8px;
-  }
+    .recognition-year {
+        margin-bottom: 8px;
+    }
 
-  .recognition-content h3 {
-    font-size: 2.5rem;
-  }
+    .recognition-content h3 {
+        font-size: 2.5rem;
+    }
 
-  .recognition-content p {
-    max-width: 280px;
-    line-height: 1.5;
-  }
+    .recognition-content p {
+        max-width: 280px;
+        line-height: 1.5;
+    }
 
-  .recognition-bg-number {
-    right: -5%;
-    bottom: -10%;
-    font-size: 9rem;
-  }
+    .recognition-bg-number {
+        right: -5%;
+        bottom: -10%;
+        font-size: 9rem;
+    }
+}
+
+.project-grid .project-1 {
+    grid-column: 1 / -1;
+}
+
+.project-grid .project-1 .project-visual {
+    aspect-ratio: 2.1 / 1;
+}
+
+.project-grid .project-1 .project-info {
+    grid-template-columns: 1fr auto;
+}
+
+@media (max-width: 800px) {
+    .project-grid .project-1 {
+        grid-column: auto;
+    }
+
+    .project-grid .project-1 .project-visual {
+        aspect-ratio: 1.35 / 1;
+    }
+}
+
+/* =========================================
+   PROJECT DETAIL
+========================================= */
+
+.project-detail {
+    padding-bottom: 120px;
+}
+
+.detail-hero {
+    padding-top: 120px;
+    padding-bottom: 90px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 70px;
+    color: var(--muted, #8d8d95);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+.detail-heading {
+    max-width: 1000px;
+}
+
+.detail-heading .eyebrow {
+    margin-bottom: 18px;
+}
+
+.detail-heading h1 {
+    margin: 0;
+    font-size: clamp(64px, 9vw, 150px);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+    font-weight: 500;
+}
+
+.detail-intro {
+    max-width: 650px;
+    margin-top: 40px;
+    font-size: 20px;
+    line-height: 1.55;
+    color: #92929a;
+}
+
+
+/* CTA */
+
+.detail-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 55px;
+    flex-wrap: wrap;
+}
+
+.detail-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 22px;
+    border: 1px solid #33343a;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.detail-button-primary {
+    background: #f4f1eb;
+    color: #090a0d;
+    border-color: #f4f1eb;
+}
+
+.detail-button-primary:hover {
+    background: #fff;
+}
+
+.detail-button-secondary {
+    color: #f4f1eb;
+    background: transparent;
+}
+
+.detail-button-secondary:hover {
+    border-color: #777;
+}
+
+
+/* COVER */
+
+.detail-cover {
+    margin-top: 20px;
+}
+
+.detail-cover .visual {
+    width: 100%;
+    overflow: hidden;
+}
+
+.detail-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* CONTENT */
+
+.detail-content {
+    margin-top: 120px;
+}
+
+.detail-section {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 700px);
+    gap: 60px;
+    padding: 70px 0;
+    border-top: 1px solid #292a2f;
+}
+
+.detail-section:last-child {
+    border-bottom: 1px solid #292a2f;
+}
+
+.detail-section-number {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: #666870;
+}
+
+.detail-section h2 {
+    margin: 0;
+    font-size: clamp(32px, 4vw, 54px);
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+}
+
+.detail-section p {
+    max-width: 620px;
+    margin-top: 24px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #92929a;
+}
+
+
+/* FOOTER */
+
+.next-project {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.next-project a {
+    color: #f4f1eb;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.next-project a:hover {
+    text-decoration: underline;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .detail-hero {
+        padding-top: 80px;
+        padding-bottom: 60px;
+    }
+
+    .back-link {
+        margin-bottom: 50px;
+    }
+
+    .detail-heading h1 {
+        font-size: clamp(52px, 16vw, 90px);
+    }
+
+    .detail-intro {
+        font-size: 17px;
+        margin-top: 28px;
+    }
+
+    .detail-actions {
+        margin-top: 38px;
+    }
+
+    .detail-button {
+        width: 100%;
+    }
+
+    .detail-cover {
+        margin-top: 0;
+    }
+
+    .detail-content {
+        margin-top: 80px;
+    }
+
+    .detail-section {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 50px 0;
+    }
+
+    .detail-section h2 {
+        font-size: 38px;
+    }
+
+    .detail-section p {
+        font-size: 16px;
+    }
+
+    .next-project {
+        padding-top: 70px;
+    }
+
+}
+
+.detail-hero {
+    padding-top: 55px;
+    padding-bottom: 80px;
+}
+
+.detail-heading {
+    margin-top: 50px;
+}
+
+.detail-heading h1 {
+    margin-top: 14px;
+}
+
+.detail-heading p {
+    margin-top: 22px;
 }
