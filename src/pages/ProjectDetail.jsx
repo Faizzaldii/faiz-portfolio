@@ -1,6 +1,133 @@
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getProject } from '../data/projects'
 import Visual from '../components/Visual'
+
+const sectionGroups = [
+  {
+    label: '01 / CONTEXT',
+    title: 'Understanding the challenge.',
+    description:
+      'The context, objectives, and responsibilities behind the project.',
+    indices: [0, 1],
+  },
+  {
+    label: '02 / EXECUTION',
+    title: 'Turning plans into action.',
+    description:
+      'The planning, coordination, and decisions behind the execution.',
+    indices: [2, 3, 4],
+  },
+  {
+    label: '03 / OUTCOME',
+    title: 'What the project delivered.',
+    description:
+      'The outputs, key takeaways, and lessons from the project.',
+    indices: [5, 6, 7],
+  },
+]
+
+function normalizeSection(section, index) {
+  if (Array.isArray(section)) {
+    return {
+      title: section[0],
+      description: section[1],
+      index,
+    }
+  }
+
+  return {
+    title: section.title,
+    description: section.description,
+    index,
+  }
+}
+
+
+function ProjectGallery({ project }) {
+  const galleryImages = Array.isArray(project.gallery) ? project.gallery : []
+  const slides = [
+    { image: project.image, alt: `${project.title} — project cover` },
+    ...galleryImages
+      .filter((image) => image && image !== project.image)
+      .map((image, index) => ({
+        image,
+        alt: `${project.title} — project image ${index + 2}`,
+      })),
+  ]
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isChanging, setIsChanging] = useState(false)
+
+  function changeSlide(direction) {
+    if (slides.length < 2 || isChanging) return
+    setIsChanging(true)
+    setActiveIndex((current) => (current + direction + slides.length) % slides.length)
+    window.setTimeout(() => setIsChanging(false), 650)
+  }
+
+  const activeSlide = slides[activeIndex]
+
+  const imageUrl = activeSlide?.image
+    ? import.meta.env.BASE_URL +
+    (activeSlide.image.startsWith('/')
+      ? activeSlide.image.slice(1)
+      : activeSlide.image)
+    : ''
+
+  return (
+    <section className="detail-cover detail-gallery container" aria-label="Project gallery">
+      <div className={`detail-gallery-frame${isChanging ? ' is-changing' : ''}`}>
+        {activeSlide?.image ? (
+          <img
+            key={activeSlide.image}
+            className="detail-gallery-image"
+            src={imageUrl}
+            alt={activeSlide.alt}
+          />
+        ) : (
+          <Visual project={project} className="detail-cover-visual" />
+        )}
+        <div className="detail-gallery-vignette" aria-hidden="true" />
+        {slides.length > 1 && (
+          <div className="detail-gallery-controls">
+            <button
+              className="gallery-arrow gallery-arrow-previous"
+              type="button"
+              onClick={() => changeSlide(-1)}
+              aria-label="Previous project image"
+              disabled={isChanging}
+            >
+              <span aria-hidden="true">←</span>
+            </button>
+            <div className="detail-gallery-counter" aria-live="polite">
+              <span>{String(activeIndex + 1).padStart(2, '0')}</span>
+              <i />
+              <span>{String(slides.length).padStart(2, '0')}</span>
+            </div>
+            <button
+              className="gallery-arrow gallery-arrow-next"
+              type="button"
+              onClick={() => changeSlide(1)}
+              aria-label="Next project image"
+              disabled={isChanging}
+            >
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        )}
+      </div>
+      <div className="detail-cover-caption">
+        <span>{project.title} / PROJECT OVERVIEW</span>
+        <span>{project.year}</span>
+      </div>
+      {slides.length > 1 && (
+        <div className="detail-gallery-progress" aria-hidden="true">
+          <span style={{ width: `${((activeIndex + 1) / slides.length) * 100}%` }} />
+        </div>
+      )}
+    </section>
+  )
+}
 
 export default function ProjectDetail() {
   const { id } = useParams()
@@ -9,124 +136,176 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <main className="page">
-        <div className="container page-hero">
-          <h1>Project not found.</h1>
-
+        <section className="container page-hero">
+          <p className="eyebrow">404 / PROJECT NOT FOUND</p>
+          <h1>
+            This project
+            <br />
+            <em>doesn't exist.</em>
+          </h1>
           <Link className="text-link" to="/work">
-            Back to work
+            Back to all work <span>↗</span>
           </Link>
-        </div>
+        </section>
       </main>
     )
   }
 
+  const sections = (project.sections || []).map(normalizeSection)
+  const tools = Array.isArray(project.tools)
+    ? project.tools.join(' · ')
+    : project.tools || 'Information Systems'
+
+  const isLunar = project.id === 'lunar'
+
   return (
-    <main className="project-detail">
-
-      {/* HERO */}
+    <main className="project-detail detail-editorial">
       <section className="detail-hero container">
-
         <Link className="back-link" to="/work">
-          ← Back to work
+          <span aria-hidden="true">←</span> Back to work
         </Link>
 
-        <div className="detail-heading">
+        <div className="editorial-intro">
+          <div className="editorial-title">
+            <p className="eyebrow accent">
+              {project.type || 'Selected Project'}
+            </p>
+            <h1>{project.title}</h1>
+            <p className="detail-intro">{project.intro}</p>
+          </div>
 
-          <p className="eyebrow">
-            {project.type}
-          </p>
-
-          <h1>
-            {project.title}
-          </h1>
-
-          <p className="detail-intro">
-            {project.intro}
-          </p>
-          <div className="detail-meta">
-            <div className="detail-meta-item">
+          <div className="editorial-facts">
+            <div>
               <span>ROLE</span>
-              <strong>{project.role}</strong>
+              <strong>{project.role || 'Project Contributor'}</strong>
             </div>
-
-            <div className="detail-meta-item">
+            <div>
               <span>YEAR</span>
-              <strong>{project.year}</strong>
+              <strong>{project.year || '—'}</strong>
             </div>
-
-            <div className="detail-meta-item">
-              <span>TOOLS</span>
-              <strong>Odoo</strong>
+            <div>
+              <span>SCOPE</span>
+              <strong>{isLunar ? '4 divisions' : tools}</strong>
             </div>
+            {isLunar && (
+              <div>
+                <span>PERIOD</span>
+                <strong>Mar – Aug 2026</strong>
+              </div>
+            )}
           </div>
         </div>
 
-        <div className="detail-actions">
-          {project.externalUrl && (
+        {project.externalUrl && (
+          <div className="detail-actions">
             <a
               href={project.externalUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="detail-button detail-button-primary"
             >
-              Visit Jakarta Capuche ↗
+              {project.externalLabel || 'Explore project'} ↗
             </a>
-          )}
+          </div>
+        )}
+      </section>
 
-          <a
-            href={`${import.meta.env.BASE_URL}projects/jakarta-capuche/Jakarta-Capuche-Portfolio.pdf`}
-            download
-            className="detail-button detail-button-secondary"
-          >
-            Download Case Study ↓
-          </a>
+      <ProjectGallery project={project} />
+
+      {isLunar && (
+        <section className="detail-highlights container">
+          <div className="detail-highlights-heading">
+            <p className="eyebrow">AT A GLANCE</p>
+            <h2>
+              One program.
+              <br />
+              <em>Four divisions.</em>
+            </h2>
+          </div>
+
+          <div className="detail-highlight-grid">
+            <article>
+              <span>01</span>
+              <h3>Planning</h3>
+              <p>Timelines, task allocation, and execution plans.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Coordination</h3>
+              <p>Cross-functional alignment with team leads and stakeholders.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Monitoring</h3>
+              <p>Progress tracking, follow-ups, and operational problem-solving.</p>
+            </article>
+          </div>
+        </section>
+      )}
+
+      <section className="detail-content container">
+        <div className="detail-content-heading">
+          <p className="eyebrow">INSIDE THE PROJECT</p>
+          <h2>
+            From thinking
+            <br />
+            <em>to execution.</em>
+          </h2>
+          <p>
+            Explore the context, approach, and outcomes behind the work.
+          </p>
         </div>
 
+        {sectionGroups.map((group, groupIndex) => {
+          const items = group.indices
+            .map((index) => sections[index])
+            .filter(Boolean)
+
+          if (!items.length) return null
+
+          return (
+            <section
+              className="detail-chapter"
+              key={group.label}
+            >
+              <div className="detail-chapter-heading">
+                <p className="eyebrow">{group.label}</p>
+                <h3>{group.title}</h3>
+                <p>{group.description}</p>
+              </div>
+
+              <div className="detail-chapter-cards">
+                {items.map((section) => (
+                  <article
+                    className="detail-story-card"
+                    key={`${section.title}-${section.index}`}
+                  >
+                    <span className="detail-story-number">
+                      {String(section.index + 1).padStart(2, '0')}
+                    </span>
+                    <div>
+                      <h4>{section.title.replace(/^\d+\s*\/\s*/, '')}</h4>
+                      <p>{section.description}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )
+        })}
       </section>
 
-
-      {/* PROJECT VISUAL */}
-      <section className="detail-cover container">
-        <Visual project={project} />
-      </section>
-
-
-      {/* CONTENT */}
-      <section className="detail-content container">
-
-        {project.sections?.map((section, index) => (
-          <article
-            className="detail-section"
-            key={section.title}
-          >
-
-            <div className="detail-section-number">
-              0{index + 1}
-            </div>
-
-            <div>
-              <h2>{section.title}</h2>
-
-              <p>
-                {section.description}
-              </p>
-            </div>
-
-          </article>
-        ))}
-
-      </section>
-
-
-      {/* FOOTER */}
       <section className="next-project container">
-
-        <Link to="/work">
-          View all work →
+        <p className="eyebrow">KEEP EXPLORING</p>
+        <h2>
+          More work.
+          <br />
+          <em>More perspectives.</em>
+        </h2>
+        <Link className="detail-button detail-button-primary" to="/work">
+          Explore all projects <span aria-hidden="true">↗</span>
         </Link>
-
       </section>
-
     </main>
   )
 }

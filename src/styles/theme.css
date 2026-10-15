@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+  color-scheme: light;
+  --color-paper: #f8f7ff;
+  --color-white: #ffffff;
+  --color-ink: #211a3b;
+  --color-ink-deep: #21183d;
+  --color-body: #514b68;
+  --color-muted: #827b9b;
+  --color-line: #e4def4;
+  --color-accent: #7954f2;
+  --color-accent-strong: #6037dc;
+  --color-accent-soft: #eee8ff;
+  --color-blue-soft: #efedfb;
+  --color-card: #ffffff;
+  --color-lavender: #c8b8ff;
+  --color-glow: rgba(121, 84, 242, .17);
+  --font-sans: 'DM Sans', Arial, sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'DM Mono', monospace;
+  --page-width: 1240px;
+  --page-gutter: clamp(22px, 5.8vw, 88px);
+  --section-space: clamp(82px, 10vw, 148px);
+  --radius-sm: 3px;
+  --radius-card: 14px;
+  --shadow-soft: 0 18px 50px rgba(49, 31, 105, .08);
+  --ease-editorial: cubic-bezier(.22, 1, .36, 1);
+}
