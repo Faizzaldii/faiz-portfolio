@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { allProjects } from '../data/projects'
 import ProjectCard from '../components/ProjectCard'
 
-const categories = ['All', 'Leadership', 'Competition', 'Projects']
+const categories = ['All', 'Leadership', 'Competition', 'Projects', 'Certifications']
 
 export default function Work() {
   const [activeCategory, setActiveCategory] = useState('All')

@@ -81,8 +81,8 @@ function ProjectGallery({ project }) {
           <img
             key={activeSlide.image}
             className="detail-gallery-image"
-            src={imageUrl}
-            alt={activeSlide.alt}
+            src={`${import.meta.env.BASE_URL}${activeSlide.image.replace(/^\//, '')}`}
+            alt={activeSlide.alt || project.title}
           />
         ) : (
           <Visual project={project} className="detail-cover-visual" />
@@ -174,6 +174,70 @@ export default function ProjectDetail() {
             <p className="detail-intro">{project.intro}</p>
           </div>
 
+          {project.id === 'hampiness-isad' && (
+            <aside className="project-documentation" aria-label="Project documentation">
+              <span className="eyebrow">PROJECT DOCUMENTATION</span>
+              <h3>Explore the full documentation.</h3>
+              <p>
+                Review the complete ISAD report, including system analysis,
+                process models, UML diagrams, UI/UX designs, and system architecture.
+              </p>
+
+              <div className="project-documentation-actions">
+                <a
+                  href={`https://drive.google.com/file/d/13QWOy1zhIv4SvgaPEkd1z-ayyRwy2LrB/view?usp=sharing`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="document-link"
+                >
+                  View Full Report <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  href={`${import.meta.env.BASE_URL}projects/Hampiness-isad/PROJECT-ISAD.pdf`}
+                  download="projects/Hampiness-isad/PROJECT-ISAD.pdf"
+                  className="document-link document-link-secondary"
+                >
+                  Download PDF <span aria-hidden="true">↓</span>
+                </a>
+              </div>
+            </aside>
+          )}
+
+
+          {project.id === 'kopi-jago-dim' && (
+            <section className="project-documentation">
+              <span className="eyebrow">PROJECT DOCUMENTATION</span>
+
+              <h2>Explore the full documentation.</h2>
+
+              <p>
+                Review the complete Kopi Jago DIM report, including
+                database design, data modeling, SQL implementation,
+                normalization, and application workflows.
+              </p>
+
+              <div className="project-documentation-actions">
+                <a
+                  href={`https://drive.google.com/file/d/1cn7HkSEr1o11H0ukhEPbKZTbyHET0zxr/view?usp=drive_link`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="document-link"
+                >
+                  View Full Report ↗
+                </a>
+
+                <a
+                  href={`${import.meta.env.BASE_URL}projects/dim-project/Project-DIM-Kelompok-Jago.pdf`}
+                  download="projects/dim-project/Project-DIM-Kelompok-Jago.pdf"
+                  className="document-link document-link-secondary"
+                >
+                  Download PDF ↓
+                </a>
+              </div>
+            </section>
+          )}
+
+
           <div className="editorial-facts">
             <div>
               <span>ROLE</span>
@@ -256,7 +320,7 @@ export default function ProjectDetail() {
           </p>
         </div>
 
-        {sectionGroups.map((group, groupIndex) => {
+        {sectionGroups.map((group) => {
           const items = group.indices
             .map((index) => sections[index])
             .filter(Boolean)

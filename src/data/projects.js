@@ -141,7 +141,7 @@ export const projects = [
     ],
     featured: true,
     size: 'medium',
-    image: '/projects/lunar/cover.JPG',
+    image: '/projects/lunar/cover.jpg',
     fallback: 'lunar',
     intro:
       'LUNAR was a leadership development program designed to prepare prospective HIMSISFO management members. As Project Manager, I led end-to-end planning and execution, aligning four divisions across program planning, operations, communications, and participant management.',
@@ -332,7 +332,6 @@ export const projects = [
     featured: true,
     size: 'medium',
     image: '/projects/binus-career-influencer/cover.jpg',
-    
     fallback: 'career',
     intro:
       'A career development and student advocacy initiative focused on communicating career opportunities, professional growth, and career readiness within the BINUS University student community. The selection journey provided an opportunity to develop personal branding and communicate career-related topics to a broader student audience.',
@@ -360,6 +359,215 @@ export const projects = [
     ],
   },
 
+
+  {
+    id: 'sap-end-to-end-business-processes',
+    category: 'Certifications',
+    year: 2026,
+    date: '2026-10-27',
+    title: 'SAP Certified – Implementation Consultant',
+    type: 'Professional Certification',
+    role: 'Certified',
+    short:
+      'Validated knowledge of end-to-end business processes in SAP and how integrated enterprise processes support business operations.',
+    tags: [
+      'SAP',
+      'ERP',
+      'End-to-End Business Processes',
+      'Enterprise Systems',
+    ],
+    featured: true,
+    size: 'medium',
+    image: '/projects/sap-certificate/SAPCertificate.jpg',
+    fallback: 'certificate',
+    intro:
+      'Earned the SAP Certified – Implementation Consultant – End-to-End Business Processes in SAP credential, validating knowledge of integrated business processes within the SAP ecosystem.',
+    sections: [
+      [
+        'Certification Overview',
+        'This SAP certification recognizes validated knowledge related to end-to-end business processes in SAP.',
+      ],
+      [
+        'Relevance to My Journey',
+        'This credential supports my development in enterprise systems, business process analysis, and the application of ERP to integrated business operations.',
+      ],
+      [
+        'Areas of Interest',
+        'End-to-end process integration, enterprise resource planning, and the relationship between business operations and enterprise technology.',
+      ],
+      [
+        'Link Credly',
+        'https://www.credly.com/badges/7e7e73b4-bfaa-431b-98f7-d4231f17916b',
+      ],
+    ],
+  },
+
+  {
+    id: 'azure-ai-fundamentals',
+    category: 'Certifications',
+    year: 2025,
+    title: 'Azure AI Basic Fundamental',
+    type: 'Self-Paced Learning Certificate',
+    role: 'Course Completed',
+    short:
+      'Completed self-paced learning on Azure AI fundamentals, building foundational familiarity with artificial intelligence concepts in the Microsoft Azure ecosystem.',
+    tags: [
+      'Microsoft Azure',
+      'Artificial Intelligence',
+      'AI Fundamentals',
+      'Cloud Computing',
+    ],
+    featured: true,
+    size: 'medium',
+    image: '/projects/elevate-azure-ai/elevate-azure-ai-certification.jpg',
+    fallback: 'certificate',
+    intro:
+      'Successfully completed the Self-Paced Azure AI Basic Fundamental learning program.',
+    sections: [
+      [
+        'Program Overview',
+        'Completed a self-paced learning program focused on Azure AI fundamentals.',
+      ],
+      [
+        'Learning Focus',
+        'Developing foundational familiarity with artificial intelligence and the Azure AI ecosystem.',
+      ],
+      [
+        'Relevance to My Journey',
+        'This learning experience complements my interest in enterprise technology and the application of AI to business processes and digital solutions.',
+      ],
+    ],
+  },
+
+
+  {
+    id: 'hampiness-isad',
+    category: 'Projects',
+    year: 2025,
+    date: '2025-12-01',
+    title: 'Hampiness',
+    type: 'Information Systems Analysis & Design',
+    role: 'Business Analyst',
+    short:
+      'Designed an integrated hampers ordering system by translating business requirements into process models, system architecture, and user-centered interfaces.',
+    tags: [
+      'System Analysis',
+      'Business Process Modeling',
+      'UML',
+      'Data Flow Diagram',
+      'UI/UX Design',
+      'System Architecture',
+    ],
+    featured: true,
+    size: 'large',
+    image: '/projects/Hampiness-isad/HampinessCover.jpg',
+    gallery: [
+      '/projects/Hampiness-isad/hampiness-gallery-02.png',
+      '/projects/Hampiness-isad/hampiness-gallery-03.png',
+      '/projects/Hampiness-isad/hampiness-gallery-04.png',
+    ],
+    fallback: 'project',
+    intro:
+      'Hampiness is an information system concept for hampers ordering that connects customers, vendors, and administrators through an integrated ordering and fulfillment experience.',
+    sections: [
+      [
+        'Project Overview',
+        'Developed as a final project for Information Systems Analysis and Design at BINUS University during the odd semester of 2025/2026. The project focused on analyzing business requirements and designing an integrated information system for hampers ordering.',
+      ],
+      [
+        'The Challenge',
+        'The system needed to support multiple stakeholders with different responsibilities, from customer registration and ordering to vendor fulfillment and administrative reporting.',
+      ],
+      [
+        'System Analysis',
+        'Mapped system requirements using fishbone diagrams, a context diagram, Data Flow Diagrams, use case diagrams, and detailed use case descriptions.',
+      ],
+      [
+        'System Design',
+        'Developed class diagrams, sequence diagrams, state transition diagrams, and activity diagrams to describe system structure, interactions, and business workflows.',
+      ],
+      [
+        'UI/UX Design',
+        'Designed interfaces for customer registration, product discovery, hampers ordering, checkout, payment, order history, reviews, vendor product management, delivery submission, and administrative dashboards.',
+      ],
+      [
+        'System Architecture',
+        'Proposed a three-tier client-server architecture separating the presentation, application, and data layers, with Java and Node.js identified for application-side technologies and MySQL for data storage.',
+      ],
+      [
+        'Key Takeaways',
+        'Strengthened my ability to translate business requirements into structured system models, connect user journeys with backend processes, and communicate system design through technical diagrams and interface prototypes.',
+      ],
+    ],
+  },
+  {
+    id: 'kopi-jago-dim',
+    category: 'Projects',
+    year: 2026,
+    date: '2026-06-01',
+    title: 'Customer Idea to Seasonal Menu',
+    type: 'Data Information Management',
+    role: 'Database Design',
+    short:
+      'Designed a relational database system for Kopi Jago to manage customer-driven menu innovation, from idea submission and R&D trials to community voting and product launches.',
+    tags: [
+      'Database Design',
+      'SQL',
+      'Data Modeling',
+      'Normalization',
+      'Oracle APEX',
+    ],
+    featured: true,
+    size: 'medium',
+    image: '/projects/dim-project/cover.png',
+    fallback: 'database',
+    intro:
+      'Customer Idea to Seasonal Menu is a database system concept for Kopi Jago that connects customer-generated ideas with research, menu trials, evaluation, community voting, and product launches. The project explores how structured data management can support a more organized and customer-driven product innovation process.',
+    gallery: [
+      '/projects/dim-project/erd-conceptual.png',
+      '/projects/dim-project/erd-logical.png',
+      '/projects/dim-project/database-implementation.png',
+      '/projects/dim-project/application-design.png',
+    ],
+    sections: [
+      [
+        '01 / Project Overview',
+        'Developed as a Data Information Management project, this database solution supports Kopi Jago in managing menu innovation from customer idea submission to product launch.',
+      ],
+      [
+        '02 / The Challenge',
+        'Menu innovation requires coordination among customers, R&D staff, testers, and product stakeholders. A structured database is needed to organize ideas, ingredients, trial results, voting, and product feedback consistently.',
+      ],
+      [
+        '03 / Conceptual Data Modeling',
+        'Identified core entities and their relationships, including Customer, CustomerIdea, Ingredient, RnDStaff, MenuTrial, TesterReview, CommunityVote, Product, and ProductFeedback.',
+      ],
+      [
+        '04 / Logical Database Design',
+        'Refined the conceptual model into a relational structure. Many-to-many relationships were resolved through associative entities such as IdeaIngredient and TrialIngredient to support ingredient-level details and reduce data redundancy.',
+      ],
+      [
+        '05 / Physical Implementation',
+        'Implemented database structures using SQL in Oracle APEX, including table creation, primary keys, foreign keys, integrity constraints, sample data, and data retrieval queries.',
+      ],
+      [
+        '06 / Data Integrity & Normalization',
+        'Applied relational database principles and normalization through Third Normal Form (3NF) to improve consistency, reduce redundant data, and maintain referential integrity.',
+      ],
+      [
+        '07 / End-to-End Process',
+        'Structured the information flow across customer registration, idea submission, R&D menu trials, tester reviews, community voting, product launch, and post-launch feedback.',
+      ],
+      [
+        '08 / Application Design',
+        'Designed application screens for key workflows, including customer registration, idea submission, community voting, tester reviews, launched products, and customer feedback.',
+      ],
+      [
+        '09 / Key Takeaways',
+        'Strengthened my understanding of database design, entity relationship modeling, SQL implementation, normalization, and the role of information management in supporting business processes.',
+      ],
+    ],
+  },
 ]
 
 export const featuredProjects = [...projects]
