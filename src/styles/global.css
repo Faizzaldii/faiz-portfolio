@@ -899,7 +899,7 @@ a:focus-visible {
 
 /* About and archive pages */
 .page-hero {
-  padding-top: clamp(58px, 8vw, 108px);
+  padding-top: 18px;
   padding-bottom: clamp(45px, 6vw, 76px);
 }
 

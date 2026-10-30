@@ -174,70 +174,76 @@ export default function ProjectDetail() {
             <p className="detail-intro">{project.intro}</p>
           </div>
 
-          {project.id === 'hampiness-isad' && (
-            <aside className="project-documentation" aria-label="Project documentation">
-              <span className="eyebrow">PROJECT DOCUMENTATION</span>
-              <h3>Explore the full documentation.</h3>
-              <p>
-                Review the complete ISAD report, including system analysis,
-                process models, UML diagrams, UI/UX designs, and system architecture.
-              </p>
-
-              <div className="project-documentation-actions">
-                <a
-                  href={`https://drive.google.com/file/d/13QWOy1zhIv4SvgaPEkd1z-ayyRwy2LrB/view?usp=sharing`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="document-link"
-                >
-                  View Full Report <span aria-hidden="true">↗</span>
-                </a>
-                <a
-                  href={`${import.meta.env.BASE_URL}projects/Hampiness-isad/PROJECT-ISAD.pdf`}
-                  download="projects/Hampiness-isad/PROJECT-ISAD.pdf"
-                  className="document-link document-link-secondary"
-                >
-                  Download PDF <span aria-hidden="true">↓</span>
-                </a>
-              </div>
-            </aside>
-          )}
 
 
-          {project.id === 'kopi-jago-dim' && (
-            <section className="project-documentation">
-              <span className="eyebrow">PROJECT DOCUMENTATION</span>
+          {[
+            'hampiness-isad',
+            'kopi-jago-dim',
+            'timeless-cuisine',
+            'sales-performance-analysis'
+          ].includes(project.id) && (
+              <aside className="project-documentation" aria-label="Project documentation">
+                <span className="eyebrow">PROJECT DOCUMENTATION</span>
+                <h3>Explore the full documentation.</h3>
 
-              <h2>Explore the full documentation.</h2>
+                <p>
+                  {project.id === 'hampiness-isad' &&
+                    'Review the complete ISAD report, including system analysis, process models, UML diagrams, UI/UX designs, and system architecture.'}
 
-              <p>
-                Review the complete Kopi Jago DIM report, including
-                database design, data modeling, SQL implementation,
-                normalization, and application workflows.
-              </p>
+                  {project.id === 'kopi-jago-dim' &&
+                    'Review the complete Kopi Jago DIM report, including database design, data modeling, SQL implementation, normalization, and application workflows.'}
 
-              <div className="project-documentation-actions">
-                <a
-                  href={`https://drive.google.com/file/d/1cn7HkSEr1o11H0ukhEPbKZTbyHET0zxr/view?usp=drive_link`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="document-link"
-                >
-                  View Full Report ↗
-                </a>
+                  {project.id === 'timeless-cuisine' &&
+                    'Review the complete Timeless Cuisine ISAD report, including problem analysis, DFD, UML diagrams, UI/UX designs, and three-tier system architecture.'}
 
-                <a
-                  href={`${import.meta.env.BASE_URL}projects/dim-project/Project-DIM-Kelompok-Jago.pdf`}
-                  download="projects/dim-project/Project-DIM-Kelompok-Jago.pdf"
-                  className="document-link document-link-secondary"
-                >
-                  Download PDF ↓
-                </a>
-              </div>
-            </section>
-          )}
+                  {project.id === 'sales-performance-analysis' &&
+                    'Review the complete Data Analytics report, including data cleaning, Excel functions, sensitivity analysis, Power Pivot, data visualization, and interactive dashboard development.'}
+                </p>
 
+                <div className="project-documentation-actions">
+                  <a
+                    href={
+                      project.id === 'hampiness-isad'
+                        ? 'https://drive.google.com/file/d/13QWOy1zhIv4SvgaPEkd1z-ayyRwy2LrB/view?usp=sharing'
+                        : project.id === 'kopi-jago-dim'
+                          ? 'https://drive.google.com/file/d/1cn7HkSEr1o11H0ukhEPbKZTbyHET0zxr/view?usp=drive_link'
+                          : project.id === 'timeless-cuisine'
+                            ? 'https://drive.google.com/file/d/1lXoXYSr9sBKLC6kTmUvp1eWXxAD6Botp/view?usp=drive_link'
+                            : 'https://drive.google.com/file/d/1t2suPF2u8KRY7t-dg2rV_dkxoqS0r55b/view?usp=drive_link'
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="document-link"
+                  >
+                    View Full Report <span aria-hidden="true">↗</span>
+                  </a>
 
+                  <a
+                    href={
+                      project.id === 'hampiness-isad'
+                        ? `${import.meta.env.BASE_URL}projects/Hampiness-isad/PROJECT-ISAD.pdf`
+                        : project.id === 'kopi-jago-dim'
+                          ? `${import.meta.env.BASE_URL}projects/dim-project/Project-DIM-Kelompok-Jago.pdf`
+                          : project.id === 'timeless-cuisine'
+                            ? `${import.meta.env.BASE_URL}projects/timeless-cuisine/project-isad-timeless-cuisine.pdf`
+                            : `${import.meta.env.BASE_URL}projects/sales-performance-analysis/PROJECT-DATA-MODELLING.pdf`
+                    }
+                    download={
+                      project.id === 'hampiness-isad'
+                        ? 'Hampiness-ISAD.pdf'
+                        : project.id === 'kopi-jago-dim'
+                          ? 'Kopi-Jago-DIM.pdf'
+                          : project.id === 'timeless-cuisine'
+                            ? 'Timeless-Cuisine-ISAD.pdf'
+                            : 'Sales-Performance-Analysis.pdf'
+                    }
+                    className="document-link document-link-secondary"
+                  >
+                    Download PDF <span aria-hidden="true">↓</span>
+                  </a>
+                </div>
+              </aside>
+            )}
           <div className="editorial-facts">
             <div>
               <span>ROLE</span>

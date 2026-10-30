@@ -445,7 +445,7 @@ export const projects = [
     category: 'Projects',
     year: 2025,
     date: '2025-12-01',
-    title: 'Hampiness',
+    title: 'Hampiness Information Systems Analysis & Design',
     type: 'Information Systems Analysis & Design',
     role: 'Business Analyst',
     short:
@@ -505,7 +505,7 @@ export const projects = [
     category: 'Projects',
     year: 2026,
     date: '2026-06-01',
-    title: 'Customer Idea to Seasonal Menu',
+    title: 'Customer Idea to Seasonal Menu Data Information Management',
     type: 'Data Information Management',
     role: 'Database Design',
     short:
@@ -568,6 +568,176 @@ export const projects = [
       ],
     ],
   },
+
+
+  {
+    id: 'timeless-cuisine',
+    category: 'Projects',
+    year: 2025,
+    date: '2025-12-01',
+    title: 'Timeless Cuisine Restaurant Information Systems Analysis & Design',
+    type: 'Information Systems Analysis & Design',
+    role: 'Business Analysis',
+    short: 'Designed an integrated restaurant information system to support end-to-end operations, including customer ordering, payment processing, inventory management, procurement, and business reporting.',
+    tags: [
+      'System Analysis',
+      'Business Process Modeling',
+      'UML',
+      'DFD',
+      'Use Case Modeling',
+      'UI/UX Design',
+      'System Architecture'
+    ],
+    featured: true,
+    size: 'medium',
+    image: '/projects/timeless-cuisine/cover.png',
+    fallback: 'restaurant',
+
+    intro: 'Timeless Cuisine Restaurant is an academic Information Systems Analysis and Design project focused on developing an integrated information system to support restaurant operations. The proposed system connects customer ordering and payment processes with inventory management, raw material procurement, menu administration, and financial reporting. Through structured system analysis, process modeling, interface design, and architecture planning, the project translates restaurant operational requirements into a comprehensive system design.',
+
+    gallery: [
+      '/projects/timeless-cuisine/fishbone.png',
+      '/projects/timeless-cuisine/dfd-diagram.png',
+      '/projects/timeless-cuisine/use-case-diagram.png',
+      '/projects/timeless-cuisine/class-diagram.png',
+    ],
+
+    sections: [
+      [
+        '01 / Project Overview',
+        'Timeless Cuisine Restaurant is an Information Systems Analysis and Design project developed to address operational requirements in restaurant management. The proposed system integrates several operational activities into one information system, covering customer ordering, payment transactions, inventory monitoring, procurement, menu management, and business reporting.'
+      ],
+
+      [
+        '02 / Problem Identification',
+        'The project began with identifying potential operational issues through Fishbone Diagrams. The analysis examined factors related to restaurant operations and management, providing a structured foundation for understanding the problems and identifying areas that could be improved through an integrated information system.'
+      ],
+
+      [
+        '03 / System Analysis',
+        'The system requirements were translated into structured analytical models, including Context Diagrams, Data Flow Diagrams (DFD) Level 0, Use Case Diagrams, and detailed Use Case Descriptions. The analysis identified key actors such as Customers, Cashiers, Warehouse Staff, Purchasing Division, and Administrators, together with their interactions with the proposed system.'
+      ],
+
+      [
+        '04 / Functional Design',
+        'The proposed system covers ten major use cases, including product ordering, customer payment, payment transaction processing, raw material requests, stock usage recording, stock receipt recording, raw material purchasing, menu management, Profit and Loss reporting, and daily sales reporting. Each use case was documented with its actors, preconditions, postconditions, event flows, and exception conditions.'
+      ],
+
+      [
+        '05 / System Modeling',
+        'Several system modeling techniques were applied to describe the system structure and behavior. The Class Diagram represents the relationships between system classes, while System Sequence Diagrams illustrate interactions between actors and system components. State Transition Diagrams and Activity Diagrams were also developed to describe object states and operational workflows.'
+      ],
+
+      [
+        '06 / Inventory & Procurement Management',
+        'The inventory and procurement processes were designed to support raw material availability and operational continuity. Warehouse staff can monitor stock levels, record daily material usage, and register incoming materials. The Purchasing Division handles procurement based on material requests, while the system maintains stock information throughout the process.'
+      ],
+
+      [
+        '07 / UI/UX Design',
+        'User interface designs were developed to support different operational roles and system workflows. The proposed interfaces include customer ordering and payment screens, cashier transaction processing, warehouse inventory operations, purchasing activities, menu administration, and management dashboards. These designs translate the functional requirements into user-facing system interactions.'
+      ],
+
+      [
+        '08 / System Architecture',
+        'The project proposed a three-tier client/server architecture consisting of a client layer, application server layer, and database server layer. This architecture separates user interfaces, application logic, and data management. The separation is intended to support system maintainability, scalability, and future integration with additional services such as delivery partners, owner dashboards, and alternative payment services.'
+      ],
+
+      [
+        '09 / Key Takeaways',
+        'This project strengthened my understanding of Information Systems Analysis and Design, particularly in translating business requirements into structured system specifications. It also provided practical experience in process modeling, UML diagrams, functional requirements documentation, UI/UX design, and system architecture planning. More importantly, it demonstrated how integrated information systems can support operational coordination and business decision-making in the restaurant industry.'
+      ]
+    ]
+  },
+
+
+  {
+    id: 'sales-performance-analysis',
+    category: 'Projects',
+    year: 2026,
+    date: '2026-06-01',
+    title: 'Sales Performance Analysis & Dashboard Data Modelling',
+    type: 'Data Analytics & Modeling',
+    role: 'Data Analyst & Dashboard Development Team Member',
+    short: 'Analyzed European fashion retail sales data to identify top-performing products, category revenue trends, and the relationship between discount rates and sales volume through an interactive Excel dashboard.',
+    tags: [
+      'Microsoft Excel',
+      'Power Query',
+      'Data Cleaning',
+      'Power Pivot',
+      'Data Modeling',
+      'DAX',
+      'Data Visualization',
+      'Dashboard'
+    ],
+    featured: true,
+    size: 'medium',
+    image: '/projects/sales-performance-analysis/cover.png',
+    fallback: 'analytics',
+
+    intro: 'This project focuses on analyzing a multi-table European fashion retail dataset to uncover sales performance patterns, identify top and bottom-performing products, evaluate category revenue contributions, and examine the relationship between discount rates and sales volume. Using Microsoft Excel, Power Query, and Power Pivot, the project transforms raw transactional data into structured analytical models and an interactive dashboard to support data-driven business insights.',
+
+    gallery: [
+      '/projects/sales-performance-analysis/data-cleaning.png',
+      '/projects/sales-performance-analysis/data-model.png',
+      '/projects/sales-performance-analysis/pivot-analysis.png',
+      '/projects/sales-performance-analysis/dashboard.png'
+    ],
+
+    sections: [
+      [
+        '01 / Project Overview',
+        'This project analyzes a European fashion retail dataset to understand product performance, category revenue distribution, and the relationship between discount strategies and sales volume. The analysis was conducted using Microsoft Excel, combining data preparation, analytical functions, data modeling, and interactive visualizations.'
+      ],
+
+      [
+        '02 / Data Cleaning & Transformation',
+        'Prepared raw datasets using Power Query by cleaning text fields, standardizing capitalization, removing unnecessary spaces, correcting numeric values, and transforming date formats. Additional columns were created to extract year, month, and month names, enabling more structured time-based analysis.'
+      ],
+
+      [
+        '03 / Named Ranges & Excel Tables',
+        'Converted the PRODUCTS, STORESALES, SALESITEM, CAMPAIGN, STOCK, and CUSTOMER datasets into structured Excel Tables. Standardized table names and created Named Ranges for product identifiers, product names, and categories to improve formula references and data organization.'
+      ],
+
+      [
+        '04 / Logical, Lookup & Conditional Functions',
+        'Applied Excel functions including IF, AND, XLOOKUP, INDEX, MATCH, SUMIF, and AVERAGEIF to classify discounted transactions, identify priority sales items, retrieve product information, and calculate revenue metrics. These functions helped enrich transactional records and support product-level analysis.'
+      ],
+
+      [
+        '05 / Sensitivity Analysis',
+        'Conducted a two-variable Data Table analysis to evaluate how discount percentages and sales quantities affect profitability. The analysis indicated that lower discount rates of 5%–10%, combined with higher sales quantities of 200–250 units, produced the highest profit within the tested scenarios.'
+      ],
+
+      [
+        '06 / Conditional Formatting & Financial Measures',
+        'Applied Conditional Formatting using color scales to highlight products with higher and lower total revenue. Standardized financial values using Euro currency formatting and developed a Revenue Contribution measure to calculate each product’s percentage of total revenue.'
+      ],
+
+      [
+        '07 / Power Pivot & Data Modeling',
+        'Integrated multiple datasets into the Excel Data Model by establishing relationships between tables. Developed analytical measures including Total Revenue, Total Transactions, Total Quantity Sold, and Revenue Contribution. PivotTables and CUBE functions were used to retrieve and analyze aggregated business metrics.'
+      ],
+
+      [
+        '08 / Data Visualization & Business Analysis',
+        'Developed multiple visualizations to examine different dimensions of sales performance. Bar charts were used to identify the Top 10 Performing Products by revenue, line charts to analyze monthly revenue trends, pie charts to compare category contributions, and scatter plots to investigate the relationship between discount percentages and quantity sold.'
+      ],
+
+      [
+        '09 / Interactive Dashboard',
+        'Developed an interactive Excel dashboard combining monthly revenue trends, Top 10 Performing Products, category revenue contributions, and discount analysis. Slicers for month and year allow users to filter the dashboard and explore sales performance across different periods.'
+      ],
+
+      [
+        '10 / Key Insights & Takeaways',
+        'The analysis identified Modern High-Waist Trousers as the highest-revenue product among the Top 10, generating £228,171. Shoes, T-Shirts, and Dresses were the leading revenue-contributing categories. Transactions without discounts generated the highest overall sales volume at 6,897 units, while discounted transactions showed varying sales volumes across discount levels. This project strengthened my understanding of data preparation, analytical modeling, Excel functions, and dashboard development for business decision-making.'
+      ]
+    ]
+  },
+
+
 ]
 
 export const featuredProjects = [...projects]
