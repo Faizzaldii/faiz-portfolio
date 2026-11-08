@@ -8,7 +8,7 @@ import ProjectDetail from './pages/ProjectDetail'
 import PortfolioIntro from './components/PortfolioIntro'
 
 export default function App() {
-  const [showSplash, setShowSplash] = useState(true)
+  const [showSplash, setShowSplash] = useState(false)
   const location = useLocation()
 
   const finishSplash = useCallback(() => {
