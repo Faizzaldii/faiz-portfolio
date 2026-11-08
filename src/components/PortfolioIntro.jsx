@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import './SplashScreen.css'
 
 export default function SplashScreen({ onFinish }) {
-  const [exiting, setExiting] = useState(true)
+  const [exiting, setExiting] = useState(false)
 
   useEffect(() => {
     const exitTimer = window.setTimeout(() => {
@@ -29,8 +29,8 @@ export default function SplashScreen({ onFinish }) {
         <span className="splash-index">PORTFOLIO / 2026</span>
 
         <div className="splash-monogram">
-          <span>Faiz   </span>
-          <span className="splash-monogram-z">   Zaldi</span>
+          <span>Faiz </span>
+          <span className="splash-monogram-z"> Zaldi</span>
         </div>
 
         <div className="splash-divider" />

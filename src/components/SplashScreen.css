@@ -1,18 +1,44 @@
+/* ========================================
+   SPLASH SCREEN
+======================================== */
+
 .splash-screen {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
   z-index: 9999;
+
   display: grid;
   place-items: center;
+
   overflow: hidden;
   isolation: isolate;
+
   background:
-    radial-gradient(ellipse at 50% 45%, #38245f 0%, transparent 48%),
+    radial-gradient(
+      ellipse at 50% 45%,
+      #38245f 0%,
+      transparent 48%
+    ),
     #100b1d;
+
   color: #f7f2ff;
+
   opacity: 1;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  visibility: visible;
+  pointer-events: auto;
+
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
 }
+
+/* ========================================
+   EXIT TRANSITION
+======================================== */
 
 .splash-screen.splash-exit {
   opacity: 0;
@@ -20,15 +46,27 @@
   pointer-events: none;
 }
 
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
 .splash-content {
   position: relative;
   z-index: 2;
+
   display: flex;
   align-items: center;
   flex-direction: column;
+
   text-align: center;
+
   animation: splash-reveal 0.9s ease both;
+  -webkit-animation: splash-reveal 0.9s ease both;
 }
+
+/* ========================================
+   TEXT ELEMENTS
+======================================== */
 
 .splash-index,
 .splash-content p,
@@ -39,15 +77,22 @@
   color: #c5b1ff;
 }
 
+/* ========================================
+   MONOGRAM
+======================================== */
+
 .splash-monogram {
   display: flex;
   align-items: center;
   justify-content: center;
+
   margin: 26px 0;
+
   font-family: Georgia, serif;
   font-size: clamp(110px, 19vw, 210px);
   line-height: 0.9;
   letter-spacing: -0.12em;
+
   text-shadow: 0 0 65px rgba(174, 133, 255, 0.22);
 }
 
@@ -56,16 +101,34 @@
   font-style: italic;
 }
 
+/* ========================================
+   DIVIDER
+======================================== */
+
 .splash-divider {
   width: 80px;
   height: 1px;
+
   margin-bottom: 22px;
-  background: linear-gradient(90deg, transparent, #bda0ff, transparent);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #bda0ff,
+    transparent
+  );
+
   animation: splash-line 1s ease 0.3s both;
+  -webkit-animation: splash-line 1s ease 0.3s both;
 }
+
+/* ========================================
+   HEADING
+======================================== */
 
 .splash-content h1 {
   margin: 0;
+
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.3em;
@@ -80,31 +143,53 @@
   font-size: 9px;
 }
 
+/* ========================================
+   ORBIT
+======================================== */
+
 .splash-orbit {
   position: absolute;
+
   width: min(75vw, 700px);
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
+
   border: 1px solid rgba(196, 169, 255, 0.13);
   border-radius: 50%;
+
   pointer-events: none;
+
+  opacity: 0;
+
+  animation: splash-orbit-in 1.5s ease forwards;
+  -webkit-animation: splash-orbit-in 1.5s ease forwards;
 }
 
 .splash-orbit-one {
   transform: rotate(-25deg) scaleY(0.56);
-  animation: splash-orbit-in 1.5s ease both;
+  -webkit-transform: rotate(-25deg) scaleY(0.56);
 }
 
 .splash-orbit-two {
   width: min(95vw, 900px);
+
   transform: rotate(35deg) scaleY(0.62);
+  -webkit-transform: rotate(35deg) scaleY(0.62);
+
   border-color: rgba(196, 169, 255, 0.07);
-  animation: splash-orbit-in 1.8s ease both;
+
+  animation-duration: 1.8s;
+  -webkit-animation-duration: 1.8s;
 }
+
+/* ========================================
+   BOTTOM LABELS
+======================================== */
 
 .splash-bottom-left,
 .splash-bottom-right {
   position: absolute;
   bottom: 30px;
+
   font-size: 9px;
 }
 
@@ -116,17 +201,31 @@
   right: 36px;
 }
 
+/* ========================================
+   ANIMATIONS
+======================================== */
+
 @keyframes splash-reveal {
   from {
     opacity: 0;
     transform: translateY(18px);
-    filter: blur(8px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
+  }
+}
+
+@-webkit-keyframes splash-reveal {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
   }
 }
 
@@ -142,12 +241,53 @@
   }
 }
 
-@keyframes splash-orbit-in {
-  from { opacity: 0; scale: 0.92; }
-  to { opacity: 1; scale: 1; }
+@-webkit-keyframes splash-line {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+
+  to {
+    width: 80px;
+    opacity: 1;
+  }
 }
 
+@keyframes splash-orbit-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes splash-orbit-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
 @media (max-width: 600px) {
+  .splash-content {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .splash-monogram {
+    font-size: clamp(90px, 19vw, 150px);
+  }
+
   .splash-content p {
     max-width: 260px;
     line-height: 1.8;
@@ -160,15 +300,33 @@
   .splash-bottom-right {
     right: 18px;
   }
+
+  .splash-orbit {
+    width: 85vw;
+  }
+
+  .splash-orbit-two {
+    width: 110vw;
+  }
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
 
+@media (prefers-reduced-motion: reduce) {
   .splash-screen,
   .splash-content,
   .splash-divider,
   .splash-orbit {
-    animation: none;
-    transition: none;
+    animation: none !important;
+    -webkit-animation: none !important;
+    transition: none !important;
+  }
+
+  .splash-content,
+  .splash-divider,
+  .splash-orbit {
+    opacity: 1;
   }
 }
