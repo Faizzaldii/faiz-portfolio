@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import './SplashScreen.css'
 
 export default function SplashScreen({ onFinish }) {
-  const [exiting, setExiting] = useState(false)
+  const [exiting, setExiting] = useState(true)
 
   useEffect(() => {
     const exitTimer = window.setTimeout(() => {
